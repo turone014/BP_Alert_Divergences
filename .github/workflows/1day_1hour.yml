@@ -24,4 +24,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run script
-        run: python alert_macd.py
+        run: python 1day.py
