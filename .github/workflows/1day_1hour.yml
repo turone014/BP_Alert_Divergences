@@ -24,4 +24,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run script
+      env:
+          ONE_DAY_BP_LONG_WEBHOOK: ${{ secrets.ONE_DAY_BP_LONG_WEBHOOK }}
+          ONE_DAY_BP_SHORT_WEBHOOK: ${{ secrets.ONE_DAY_BP_SHORT_WEBHOOK}}
         run: python 1day.py
