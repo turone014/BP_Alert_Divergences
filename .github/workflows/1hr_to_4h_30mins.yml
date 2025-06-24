@@ -1,5 +1,3 @@
-name: Scheduled Python Script
-
 on:
   schedule:
     - cron: '*/30 * * * *'  # Every 30mins
@@ -24,4 +22,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run script
-        run: python alert_macd.py
+        env:
+          ONE_HOUR_BP_LONG_WEBHOOK: ${{ secrets.ONE_HOUR_BP_LONG_WEBHOOK }}
+          ONE_HOUR_BP_SHORT_WEBHOOK: ${{ secrets.ONE_HOUR_BP_SHORT_WEBHOOK }}
+          FOUR_HOUR_BP_LONG_WEBHOOK: ${{ secrets.FOUR_HOUR_BP_LONG_WEBHOOK }}
+          FOUR_HOUR_BP_SHORT_WEBHOOK: ${{ secrets.FOUR_HOUR_BP_SHORT_WEBHOOK }}
+        run: python 1hr_4hr.py
