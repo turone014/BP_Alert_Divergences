@@ -1,4 +1,4 @@
-
+name: Every 1 Hour Job
 
 on:
   schedule:
