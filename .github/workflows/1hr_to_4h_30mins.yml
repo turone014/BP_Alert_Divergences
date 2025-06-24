@@ -1,4 +1,4 @@
-name: Every 1 Hour Job
+name: Every 30 minutes Job
 on:
   schedule:
     - cron: '*/30 * * * *'  # Every 30mins
